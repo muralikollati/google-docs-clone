@@ -35,7 +35,7 @@ export async function getServerSideProps(context){
 
   const docList = await db
                   .collection('userDocs')
-                  .doc(session.user.email)
+                  .doc(session?.user?.email)
                   .collection('docs')
                   .orderBy('timestamp', 'desc').get()
 
